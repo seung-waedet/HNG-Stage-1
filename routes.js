@@ -6,7 +6,7 @@ router.get("/", (req, res) => {
     const currentDate = new Date();
     const currentDay = currentDate.toLocaleDateString('en-US', { weekday: 'long' });
     const githubRepoUrl = 'https://github.com/seung-waedet/HNG-Stage-1';
-    const githubFileUrl = `${githubRepoUrl}/blob/main/path/to/your/file.js`;
+    const githubFileUrl = 'https://github.com/seung-waedet/HNG-Stage-1/blob/main/index.js';
 
     res.status(200).json(
         {
