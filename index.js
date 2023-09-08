@@ -1,5 +1,5 @@
 const express = require('express');
-const routes = require('../Task 1/routes');
+const routes = require('./routes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
