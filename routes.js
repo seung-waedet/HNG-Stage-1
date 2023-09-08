@@ -4,6 +4,8 @@ const router = express.Router();
 router.get("/api", (req, res) => {
     const { slack_name, track } = req.query;
     const currentDate = new Date();
+    currentDate.setMilliseconds(0);
+    const modifiedDate = currentDate.toISOString().split('.')[0] + 'Z';
     const currentDay = currentDate.toLocaleDateString('en-US', { weekday: 'long' });
     const githubRepoUrl = 'https://github.com/seung-waedet/HNG-Stage-1';
     const githubFileUrl = 'https://github.com/seung-waedet/HNG-Stage-1/blob/main/index.js';
@@ -12,7 +14,7 @@ router.get("/api", (req, res) => {
         {
             "slack_name": slack_name,
             "current_day": currentDay,
-            "utc_time": currentDate,
+            "utc_time": modifiedDate,
             "track": track,
             "github_file_url": githubFileUrl,
             "github_repo_url": githubRepoUrl,
